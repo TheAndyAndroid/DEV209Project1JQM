@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/themes/my-custom.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/themes/my-custom-theme.css">
+
+
+    <title>Fitness Tracker</title>
+</head>
+
+<!-- ===============================   HomePage   ====================================== -->
+
+<body>
+
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme='a'>
+            <div data-role="navbar" data-theme='a'>
+                <ul>
+                    <li><a href="#add" data-transition="slideup">Add Exercise</a></li>
+                    <li><a href="#show" data-transition="slideup">Your Exercises</a></li>
+                    <!-- <li><a href="#details" data-transition="slideup">Details</a></li> -->
+
+                </ul>
+            </div>
+            <h2>Welcome to your Fitness Tracker</h2>
+        </div>
+
+<!-- =================================== -->
+
+<!-- =================================== -->
+
+        <div id="homepage" data-role="content" data-theme='a'>
+            Welcome to the Exercise Tracker Website!<br>
+            Click the Add Exercise button in the navagation bar to add your most recent exercise 
+            so that you can keep track of your exercise endeavors.<br><br><br>
+        </div>
+
+<!-- =================================== -->
+
+<!-- =================================== -->
+
+        <div data-role="footer" data-theme='a'>
+            <h3>Copyright 2024 by Andrew Anderson</h3>
+        </div>
+    </div>
+
+<!-- ====================================   List Page   ================================== -->
+
+    <div data-role="page" id="show">
+        <div data-role="header" data-theme='a'>
+            <div data-role="navbar" data-theme='a'>
+                <ul>
+                    <li><a href="#home" data-transition="pop">Home Page</a></li>
+                    <li><a href="#add" data-transition="pop">Add New Exercise</a></li>
+                    <!-- <li><a href="#details" data-transition="slideup">Details</a></li> -->
+                </ul>
+            </div>
+            <h2>Your Exercises:</h2>
+        </div>
+
+<!-- =================================== -->
+
+<!-- =================================== -->
+
+        <div data-role="content" data-theme='a'>
+            <ul id="myul" data-role="listview"></ul>
+        </div>
+
+<!-- =================================== -->
+
+<!-- =================================== -->
+
+        <div data-role="footer" data-theme='a'>
+            <h3>Copyright 2024 by Andrew Anderson</h3>
+        </div>
+    </div>
+
+<!-- =====================================    Add Page    ================================= -->
+
+    <div data-role="page" id="add">
+        <div data-role="header" data-theme='a'>
+            <div data-role="navbar" data-theme='a'>
+                <ul>
+                    <li><a href="#home" data-transition="flip">Home Page</a></li>
+                    <li><a href="#show" data-transition="flip">Your Exercises</a></li>
+                    <!-- <li><a href="#details" data-transition="slideup">Details</a></li> -->
+                </ul>
+            </div>
+            <h2>Log a New Exercise</h2>
+        </div>
+
+<!-- =================================== -->
+
+<!-- =================================== -->
+
+        <div data-role="content" data-theme='a'>
+            <label for="select-day">Select a day of the week:</label>
+            <select name="select-day" id="select-day">
+                <option value="Moday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+
+            <label for="typeInput">Enter Type of Exercise:</label>
+            <input type="text" value="" id="typeInput" />
+            <label for="durationInput">Enter the Duration of Exercise (Ex: 1 hour and 15 minutes):</label>
+            <input type="text" value="" id="durationInput" />
+            <label for="setInput">Enter the Amount of Sets:</label>
+            <input type="text" value="" id="setInput" />
+            <label for="repInput">Enter the Amount of Reps:</label>
+            <input type="text" value="" id="repInput" />
+            <label for="heartInput">Enter Heart Rate (Beats Per Minute):</label>
+            <input type="text" value="" id="heartInput" />
+            <label for="notesInput">Addtional Notes:</label>
+            <input type="text" value="" id="notesInput" />
+
+
+            <button id="buttonAdd" class="ui-btn" >Add Exercise</button>
+
+        </div>
+
+<!-- =================================== -->
+
+<!-- =================================== -->
+
+        <div data-role="footer" data-theme='a'>
+            <h3>Copyright 2024 by Andrew Anderson</h3>
+        </div>
+
+    </div> <!-- end of page -->
+
+    <!-- ====================================   Details Page   ================================== --> -->
+
+    <div data-role="page" id="details">
+        <div data-role="header" data-theme='a'>
+            <div data-role="navbar" data-theme='a'>
+                <ul>
+                    <li><a href="#home" data-transition="flow">Back to Home</a></li>
+                    <li><a href="#show" data-transition="slideup">Your Exercise</a></li>
+                    <li><a href="#add" data-transition="slideup">Add New Exercise</a></li>
+                </ul>
+            </div>
+            <h4>Here is the details for this exercise:</h4>
+            <ul data-role="listview">
+                <li>
+                    <p id="theID"></p>
+                </li>
+                <li>
+                    <p id="theDay"></p>
+                </li>
+                <li>
+                    <p id="theType"></p>
+                </li>
+                <li>
+                    <p id="theDuration"></p>
+                </li>
+                <li>
+                    <p id="theSet"></p>
+                </li>
+                <li>
+                    <p id="theRep"></p>
+                </li>
+                <li>
+                    <p id="theHeart"></p>
+                </li>
+                <li>
+                    <p id="theNotes"></p>
+                </li>
+            </ul>
+  
+            <div>
+                <input type="button" value="Delete this Exercise" id="delete" />
+            </div>
+
+        </div>
+
+        <div data-role="content" data-theme='a'>
+
+        </div>
+
+<!-- =================================== -->
+
+<!-- =================================== -->
+
+        <div data-role="footer" data-theme='a'>
+            <h3>Copyright 2024 by Andrew Anderson</h3>
+        </div>
+    </div>
+
+</body>
+
+</html>
